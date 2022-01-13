@@ -1,5 +1,6 @@
 #fill matrix with clockwise direction [right, down, left, up ... ] 
-#from a rStart, Cstart number and fill with spiral order
+#may reach out of matrix boundary and may return back to the boundary later
+#tips: update the length of currently visiting direction and check the boundary of matrix
 
 class Solution:
     def spiralMatrixIII(self, rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:
