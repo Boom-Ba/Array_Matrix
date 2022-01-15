@@ -14,14 +14,12 @@ class Solution:
 		def solve(start,end, nums):
 			if start>end:
 				return 0
-			#1.exclude, so this element has to be removed 
+			#1.exclude, because it doesn't satisfy condition, cannot form a triplet
 			res = solve(start+1,end,nums)+1 
 			
-			
-			#find tuplet (start, i,j )
+			#2.to form a valid triplet (start, i, j)
 			for i in range(start+1,end):
-				for j in range(i+1,end+1):
-					
+				for j in range(i+1,end+1):#check condition 
 					if nums[start]+k==nums[i] and nums[i]+k ==nums[j]:
 						if not solve(start+1,i-1,nums) and not solve(i+1,j-1,nums):
 						#found a tuplet
