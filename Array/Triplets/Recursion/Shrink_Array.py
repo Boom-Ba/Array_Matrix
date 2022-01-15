@@ -1,6 +1,7 @@
 # Given an integer array and an integer k, 
 #shrink it by removing adjacent triplets that 
 #satisfy the given constraints and return the left number of elements in the resultant array.
+# [7, 8, 8, 9, 10, 9, 9, 10, 11, 10, 11, 12, 11, 12, 13], k = 1 
 class Solution:
 	def shrink(self, nums: List[int], k: int) -> int:
 		
@@ -19,7 +20,8 @@ class Solution:
 			
 			#2.to form a valid triplet (start, i, j)
 			for i in range(start+1,end):
-				for j in range(i+1,end+1):#check condition 
+				for j in range(i+1,end+1):#check condition, doesn't require all triplet to be adjacent, because after deletion, elememts could be form to another triplet
+				
 					if nums[start]+k==nums[i] and nums[i]+k ==nums[j]:
 						if not solve(start+1,i-1,nums) and not solve(i+1,j-1,nums):
 						#found a tuplet
