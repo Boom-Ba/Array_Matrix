@@ -5,12 +5,12 @@ class Solution:
 	def shrink(self, nums: List[int], k: int) -> int:
 		
 		##recursion on each ele in nums
-		
+
 		#two cases:
-		
+
 		#1.include the current element in triplet
 		#2.not 
-		
+
 		def solve(start,end, nums):
 			if start>end:
 				return 0
